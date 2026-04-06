@@ -3,17 +3,17 @@ import React from 'react';
 const Nav = () => {
   return (
     <nav>
-      <div className="nav-logo">ГМС <span>/ GMS</span></div>
+      <a href="#" className="nav-brand">
+        <div className="nav-badge">ГМС</div>
+        Гарант Монтаж Сервис
+      </a>
       <ul className="nav-links">
-        <li><a href="#services">Модули</a></li>
-        <li><a href="#products">Продукты</a></li>
-        <li><a href="#process">Процесс</a></li>
-        <li><a href="#contact">Контакт</a></li>
+        <li><a href="#directions">Направления</a></li>
+        <li><a href="#services">Услуги</a></li>
+        <li><a href="#about">О компании</a></li>
+        <li><a href="#contact">Контакты</a></li>
       </ul>
-      <div className="nav-status">
-        <div className="status-dot"></div>
-        SYSTEM ONLINE
-      </div>
+      <a href="#contact" className="nav-cta">Получить консультацию</a>
     </nav>
   );
 };

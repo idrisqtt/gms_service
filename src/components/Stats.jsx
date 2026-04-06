@@ -1,25 +1,54 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 
 const Stats = () => {
+  const statsRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        const counters = document.querySelectorAll('.stat-num[data-target]');
+        counters.forEach(el => {
+          const target = +el.getAttribute('data-target');
+          let count = 0;
+          const increment = Math.ceil(target / 40);
+          
+          const updateCount = () => {
+            count = Math.min(count + increment, target);
+            el.innerHTML = `${count}<span>+</span>`;
+            if (count < target) {
+              requestAnimationFrame(updateCount);
+            }
+          };
+          updateCount();
+        });
+        observer.disconnect();
+      }
+    }, { threshold: 0.4 });
+
+    if (statsRef.current) {
+      observer.observe(statsRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="stats-bar">
-      <div className="stat-item reveal">
-        <div className="stat-num">10K+</div>
-        <div className="stat-label">Устройств извлечено</div>
+    <section id="stats" ref={statsRef}>
+      <div className="stats-inner">
+        <div className="stat-cell reveal">
+          <div className="stat-num" data-target="3">0<span>+</span></div>
+          <div className="stat-label">года практической<br />работы</div>
+        </div>
+        <div className="stat-cell reveal d1">
+          <div className="stat-num" data-target="50">0<span>+</span></div>
+          <div className="stat-label">проектов в сфере<br />криминалистики и безопасности</div>
+        </div>
+        <div className="stat-cell reveal d2">
+          <div className="stat-num" data-target="100">0<span>+</span></div>
+          <div className="stat-label">внедрённых<br />технических решений</div>
+        </div>
       </div>
-      <div className="stat-item reveal reveal-delay-1">
-        <div className="stat-num">99.8%</div>
-        <div className="stat-label">Точность анализа</div>
-      </div>
-      <div className="stat-item reveal reveal-delay-2">
-        <div className="stat-num">500+</div>
-        <div className="stat-label">Специалистов обучено</div>
-      </div>
-      <div className="stat-item reveal reveal-delay-3">
-        <div className="stat-num">15+</div>
-        <div className="stat-label">Лет на рынке</div>
-      </div>
-    </div>
+    </section>
   );
 };
 
