@@ -2,7 +2,7 @@ import React from 'react';
 
 const Nav = () => {
   return (
-    <nav>
+    <nav className="navbar">
       <a href="#" className="nav-brand">
         <div className="nav-badge">ГМС</div>
         Гарант Монтаж Сервис

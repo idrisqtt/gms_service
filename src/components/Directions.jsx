@@ -1,4 +1,5 @@
 import React from 'react';
+import forensicsImg from '../assets/forensics.png';
 
 const Directions = () => {
   return (
@@ -13,7 +14,7 @@ const Directions = () => {
           <div className="dir-card reveal d1">
             <div className="dir-img">
               <img
-                src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&q=80&auto=format&fit=crop"
+                src={forensicsImg}
                 alt="Цифровая криминалистика — анализ данных"
                 loading="lazy"
               />

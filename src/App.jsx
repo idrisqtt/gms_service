@@ -1,10 +1,11 @@
 import React from 'react';
-/* Header removed as requested */
+import Nav from './components/Nav';
 import Hero from './components/Hero';
 import Stats from './components/Stats';
 import Directions from './components/Directions';
 import Services from './components/Services';
 import About from './components/About';
+import Partners from './components/Partners';
 import Process from './components/Process';
 import Trust from './components/Trust';
 import Contact from './components/Contact';
@@ -16,12 +17,14 @@ function App() {
 
   return (
     <div className="app-main">
+      <Nav />
       <main>
         <Hero />
         <Stats />
         <Directions />
         <Services />
         <About />
+        <Partners />
         <Process />
         <Trust />
         <Contact />
