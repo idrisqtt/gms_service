@@ -1,4 +1,5 @@
-import React from 'react';
+import expertLogo from '../assets/Эксперт.svg';
+import desktopLogo from '../assets/Десктоп.svg';
 
 const Products = () => {
   return (
@@ -12,7 +13,10 @@ const Products = () => {
         <div className="products-grid">
           <div className="product-panel reveal">
             <div className="panel-header">
-              <div className="panel-name">МК Эксперт Плюс</div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
+                <img src={expertLogo} alt="МК Эксперт Плюс" style={{ width: '50px', height: 'auto' }} />
+                <div className="panel-name">МК Эксперт Плюс</div>
+              </div>
               <div className="panel-status status-active">
                 <span style={{ width: '5px', height: '5px', background: 'var(--accent-ok)', borderRadius: '50%', display: 'inline-block' }}></span>
                 ACTIVE
@@ -40,7 +44,10 @@ const Products = () => {
 
           <div className="product-panel reveal reveal-delay-1">
             <div className="panel-header">
-              <div className="panel-name">МК Десктоп</div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
+                <img src={desktopLogo} alt="МК Десктоп" style={{ width: '50px', height: 'auto' }} />
+                <div className="panel-name">МК Десктоп</div>
+              </div>
               <div className="panel-status status-running">
                 <span style={{ width: '5px', height: '5px', background: 'var(--accent-primary)', borderRadius: '50%', display: 'inline-block', animation: 'pulse-dot 1.5s infinite' }}></span>
                 RUNNING

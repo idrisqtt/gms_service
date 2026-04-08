@@ -1,6 +1,7 @@
-import React from 'react';
 import expertPlusImg from '../assets/product_mk.png';
 import desktopImg from '../assets/product_desktop.png';
+import expertLogo from '../assets/Эксперт.svg';
+import desktopLogo from '../assets/Десктоп.svg';
 
 const Partners = () => {
   return (
@@ -16,7 +17,10 @@ const Partners = () => {
           {/* MK Expert Plus */}
           <div className="partner-product reveal">
             <div className="pp-content">
-              <h3 className="pp-title">«МК ЭКСПЕРТ ПЛЮС»</h3>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
+                <img src={expertLogo} alt="Logo" style={{ width: '60px', height: 'auto' }} />
+                <h3 className="pp-title" style={{ marginBottom: 0 }}>«МК ЭКСПЕРТ ПЛЮС»</h3>
+              </div>
               <p className="pp-text">
                 «МК Эксперт Плюс» разработан для проведения комплексной цифровой экспертизы данных из мобильных устройств, облачных сервисов, дронов и персональных компьютеров. Извлекайте, сохраняйте и анализируйте информацию с помощью самых передовых инструментов, предоставляемых нашим комплексом. Возможности программы позволяют в кратчайшие сроки найти важные цифровые следы для последующего предоставления их в суде.
               </p>
@@ -35,7 +39,10 @@ const Partners = () => {
           {/* MK Desktop */}
           <div className="partner-product reverse reveal d1">
             <div className="pp-content">
-              <h3 className="pp-title">«МК ДЕСКТОП»</h3>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
+                <img src={desktopLogo} alt="Logo" style={{ width: '60px', height: 'auto' }} />
+                <h3 className="pp-title" style={{ marginBottom: 0 }}>«МК ДЕСКТОП»</h3>
+              </div>
               <p className="pp-text">
                 «МК Десктоп» — современный многофункциональный инструмент, который позволяет извлекать, расшифровывать и анализировать ключевые данные из ПК, ноутбуков и серверов, работающих под управлением операционных систем Windows, macOS, GNU/Linux, а также из внешних дисков, образов жестких дисков, виртуальных машин и др.
               </p>
